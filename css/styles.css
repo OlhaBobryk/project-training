@@ -1,74 +1,116 @@
 /*font-family: 'Raleway', sans-serif;
 font-family: 'Roboto', sans-serif;*/
 :root {
-    --text-color-theme-dark: #FFFFFF;
-    --text-color-theme-light: #111111;
-    --accent-color: #FD9222;
+  --text-color-theme-dark: #ffffff;
+  --text-color-theme-light: #111111;
+  --accent-color: #fd9222;
+
+  /* для svg */
+  --color1: #fff;
+  --color2: #fd9222;
 }
 
-body { 
-    font-family: "Roboto", sans-serif;
-    font-style: normal;
-    color: var(--text-description-color);
-    background-color: var(--slogan-text-clr);
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  color: #111111;
+  background-color: #fafafa;
 }
-/*reset start*/
+
+/* Reset styles */
 h1,
 h2,
 h3,
 h4,
+h5,
+h6,
 p {
-    margin: 0;
+  margin: 0;
 }
-img {
-    display: block;
-    max-width: 100%;
-    height: auto;
+
+p:last-child {
+  margin-bottom: 0;
 }
-.link { 
-    color: currentColor;
-    text-decoration: none;
+
+ul {
+  margin: 0;
+  padding: 0;
 }
 .list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
 }
+.link {
+  text-decoration: none;
+}
+
 button {
-    font-family: inherit;
-    color: currentColor;
-    cursor: pointer;
+  font-family: inherit;
+  cursor: pointer;
 }
-/*reset end*/
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* прихований заголовок */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
 .container {
-  width: 1158px;
-  padding: 0 15px;
+  padding-left: 20px;
+  padding-right: 20px;
   margin-left: auto;
   margin-right: auto;
 }
-
-
-
-
-
-
-
-
-/*приклад*/
+@media screen and (min-width: 375px) {
+  .container {
+    width: 335px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .container {
+    width: 704px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 1136px;
+  }
+}
 
 /* Reviews Section */
+ul {
+    list-style-type: none;
+}
+
 .reviews-section {
     padding-bottom: 72px;
     text-align: center;
   }
   
-  .reviews-section-tittle {
+.reviews-section-tittle {
     margin-bottom: 74px;
   
     font-weight: 600;
     font-size: 20px;
     line-height: 1.2;
-    color: var(--primary-color);
+    color: var(--text-color-theme-light);
     letter-spacing: -0.03em;
   
     text-align: center;
@@ -77,7 +119,7 @@ button {
   }
   
   .reviews-section-tittle-brown {
-    color: var(--main-accent-color);
+    color: var(--accent-color);
   }
   
   .reviews-list {
@@ -87,17 +129,17 @@ button {
   }
   
   .reviews-item-wrapper {
-    padding-top: 34px;
+    padding-top: 38px;
   }
   
   .reviews-item {
     position: relative;
   
     text-align: center;
-    background-color: var(--white-color);
+    background-color: var(--color1);
     border-radius: 15px;
     border: 1px solid rgba(17, 17, 17, 0.1);
-    box-shadow: 0px 9.04932px 26.5717px rgba(215, 228, 249, 0.25);
+    box-shadow: 0px 9.05px 26.57px rgba(215, 228, 249, 0.25);
   }
   
   .reviews-img {
@@ -110,7 +152,7 @@ button {
   .reviews-thumb {
     height: 200px;
   
-    padding-top: 54px;
+    padding-top: 56px;
     padding-bottom: 42px;
     padding-left: 18px;
     padding-right: 18px;
@@ -122,19 +164,31 @@ button {
     font-weight: 600;
     font-size: 18px;
     line-height: 1.33;
-    color: var(--primary-color);
+    color: var(--text-color-theme-light);
   }
   
   .reviews-text {
     font-size: 14px;
-    line-height: calc(18 / 14);
+    font-weight: 400;
+    line-height: 18px;
     color: rgba(17, 17, 17, 0.7);
   }
-  
+
+  .btn {
+    padding: 12px 28px;
+    border-radius: 100px;
+    border: 1px solid var(--color1);
+    font-weight: 600;
+    line-height: calc(17 / 14);
+    color: var(--white-color);
+    background-color: transparent;
+    transition: transform .25s cubic-bezier(.4,0,.2,1),border-color 10ms cubic-bezier(.4,0,.2,1),color .25s cubic-bezier(.4,0,.2,1),background-color .25s cubic-bezier(.4,0,.2,1);
+}
   .btn.btn-review {
     margin-top: 32px;
-    border: 1px solid var(--main-accent-color);
-    color: var(--primary-color);
+    border: 1px solid var(--accent-color);
+    border-radius: 100px;
+    color: var(--text-color-theme-light);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
       border-color 30ms cubic-bezier(0.4, 0, 0.2, 1),
       color 250ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -144,21 +198,21 @@ button {
   .btn.btn-review:hover,
   .btn.btn-review:focus {
     border-color: transparent;
-    color: var(--white-color);
-    background-color: var(--main-accent-color);
+    color: var(--color1);
+    background-color: var(--accent-color);
     transform: scale(1.1);
   }
   
   .btn.btn-review:active {
     border-color: transparent;
-    color: var(--white-color);
-    background-color: var(--main-accent-color);
+    color: var(--color1);
+    background-color: var(--accent-color);
   }
   
   /* ========= Swiper =============*/
   
   @media screen and (min-width: 375px) and (max-width: 767px) {
-    .container.slick-content {
+    .container.reviews-section-content {
       width: 734px;
     }
   }
@@ -167,7 +221,7 @@ button {
     .reviews-section {
       padding-bottom: 100px;
     }
-    .container.slick-contant {
+    .container.reviews-section-content {
       width: 100%;
     }
   
@@ -186,7 +240,7 @@ button {
       padding-bottom: 128px;
     }
   
-    .container.slick-contant {
+    .container.reviews-section-content {
       max-width: 1166px;
     }
   
@@ -201,9 +255,7 @@ button {
       padding-top: 56px;
     }
   
-    .slick-track {
-      gap: 28px;
-    }
+  
   }
 
 
@@ -362,7 +414,7 @@ button {
     font-size: 14px;
     line-height: 1.21;
     letter-spacing: 0.02em;
-    color: var(--white-color);
+    color: var(--text-color-theme-dark);
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
       background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
